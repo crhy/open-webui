@@ -165,7 +165,7 @@ class SafeFireCrawlLoader(BaseLoader, RateLimitMixin, URLProcessingMixin):
     def __init__(
         self,
         web_paths,
-        verify_ssl: bool = True,
+        verify_ssl: bool = False,
         trust_env: bool = False,
         requests_per_second: Optional[float] = None,
         continue_on_failure: bool = True,
@@ -270,7 +270,7 @@ class SafeTavilyLoader(BaseLoader, RateLimitMixin, URLProcessingMixin):
         extract_depth: Literal["basic", "advanced"] = "basic",
         continue_on_failure: bool = True,
         requests_per_second: Optional[float] = None,
-        verify_ssl: bool = True,
+        verify_ssl: bool = False,
         trust_env: bool = False,
         proxy: Optional[Dict[str, str]] = None,
     ):
@@ -392,7 +392,7 @@ class SafePlaywrightURLLoader(PlaywrightURLLoader, RateLimitMixin, URLProcessing
     def __init__(
         self,
         web_paths: List[str],
-        verify_ssl: bool = True,
+        verify_ssl: bool = False,
         trust_env: bool = False,
         requests_per_second: Optional[float] = None,
         continue_on_failure: bool = True,
@@ -597,7 +597,7 @@ class SafeWebBaseLoader(WebBaseLoader):
 
 def get_web_loader(
     urls: Union[str, Sequence[str]],
-    verify_ssl: bool = True,
+    verify_ssl: bool = False,
     requests_per_second: int = 2,
     trust_env: bool = False,
 ):

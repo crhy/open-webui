@@ -2823,7 +2823,7 @@ WEB_LOADER_CONCURRENT_REQUESTS = PersistentConfig(
 ENABLE_WEB_LOADER_SSL_VERIFICATION = PersistentConfig(
     "ENABLE_WEB_LOADER_SSL_VERIFICATION",
     "rag.web.loader.ssl_verification",
-    os.environ.get("ENABLE_WEB_LOADER_SSL_VERIFICATION", "True").lower() == "true",
+    os.environ.get("ENABLE_WEB_LOADER_SSL_VERIFICATION", "False").lower() == "true",
 )
 
 WEB_SEARCH_TRUST_ENV = PersistentConfig(
